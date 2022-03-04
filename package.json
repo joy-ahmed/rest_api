@@ -1,0 +1,33 @@
+{
+  "name": "rest_api",
+  "version": "1.0.0",
+  "description": "A groundup rest api design process",
+  "main": "app.js",
+  "scripts": {
+    "lint": "eslint",
+    "start": "nodemon app",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Joy Ahmed",
+  "license": "MIT",
+  "dependencies": {
+    "express": "^4.17.3"
+  },
+  "devDependencies": {
+    "eslint": "^8.10.0",
+    "eslint-config-airbnb-base": "^15.0.0",
+    "eslint-plugin-import": "^2.25.4",
+    "nodemon": "^2.0.15"
+  },
+  "nodemonConfig": {
+    "restartable": "rs",
+    "ignore": [
+      "node_modules/**/node_modules"
+    ],
+    "delay": "2500",
+    "env": {
+      "NODE_ENV": "development",
+      "PORT": 4200
+    }
+  }
+}
