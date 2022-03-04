@@ -11,7 +11,8 @@
   "author": "Joy Ahmed",
   "license": "MIT",
   "dependencies": {
-    "express": "^4.17.3"
+    "express": "^4.17.3",
+    "mongoose": "^5.3.10"
   },
   "devDependencies": {
     "eslint": "^8.10.0",
