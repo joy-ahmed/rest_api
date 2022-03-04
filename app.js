@@ -2,6 +2,7 @@ const express = require('express');
 const mongoose = require('mongoose');
 
 const app = express();
+// eslint-disable-next-line no-unused-vars
 const db = mongoose.connect('mongodb://localhost/bookAPI');
 const bookRouter = express.Router();
 const port = process.env.PORT || 4242;
@@ -14,9 +15,18 @@ bookRouter.route('/books')
       query.genre = req.query.genre;
     }
     // eslint-disable-next-line array-callback-return
-    Book.find((_query, err, books) => {
+    Book.find(query, (err, books) => {
       if (err) res.send(err);
       res.json(books);
+    });
+  });
+
+bookRouter.route('/books/:bookId')
+  .get((req, res) => {
+    // eslint-disable-next-line array-callback-return
+    Book.findById(req.params.bookId, (err, book) => {
+      if (err) res.send(err);
+      res.json(book);
     });
   });
 
