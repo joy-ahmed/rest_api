@@ -2,6 +2,7 @@ const express = require('express');
 
 function routes(Book) {
   const bookRouter = express.Router();
+
   bookRouter.route('/books')
     .post((req, res) => {
       const book = new Book(req.body);
